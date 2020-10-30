@@ -13,6 +13,7 @@ const Palette = ({ palette }) => {
 
   return (
     <div className="Palette">
+      <div className="slider">
       <Slider
         defaultValue={level}
         min={100}
@@ -20,6 +21,7 @@ const Palette = ({ palette }) => {
         step={100}
         onAfterChange={(newLevel) => setLevel(newLevel)}
       />
+      </div>
       <div className="Palette-colors">{colorBoxes}</div>
       {/*Footer goes here*/}
     </div>
