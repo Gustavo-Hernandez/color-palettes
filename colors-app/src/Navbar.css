@@ -21,6 +21,10 @@
     color: black;
 }
 
+.select-container{
+    margin-left: auto;
+    margin-right: 1rem;
+}
 
 .slider{
     width: 340px;
