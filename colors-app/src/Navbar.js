@@ -7,6 +7,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ level, changeLevel, handleFormatChange }) => {
   const [format, setFormat] = useState("hex");
@@ -28,7 +29,7 @@ const Navbar = ({ level, changeLevel, handleFormatChange }) => {
   return (
     <header className="Navbar">
       <div className="logo">
-        <a href="/#">reactColorPicker</a>
+        <Link to="/"> reactColorPicker</Link>
       </div>
       <div className="slider-container">
         <span>Level: {level}</span>
@@ -53,7 +54,9 @@ const Navbar = ({ level, changeLevel, handleFormatChange }) => {
         anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         open={snackOpen}
         autoHideDuration={1500}
-  message={<span id="message-id">Format Changed to {format.toUpperCase()}</span>}
+        message={
+          <span id="message-id">Format Changed to {format.toUpperCase()}</span>
+        }
         onClose={handleSnackClose}
         ContentProps={{ "aria-describedby": "message-id" }}
         action={
