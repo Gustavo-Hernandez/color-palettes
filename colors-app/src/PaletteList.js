@@ -1,16 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import MiniPalette from "./MiniPalette";
 
 const PaletteList = ({ palettes }) => {
-  const names = palettes.map((palette, idx) => (
-    <Link to={`/palette/${palette.id}`} key={idx}>
-      <p>{palette.paletteName}</p>
-    </Link>
-  ));
+  const miniPalettes = palettes.map((palette, idx) => <MiniPalette key={idx} {...palette} />);
   return (
     <div>
       <h1>React Colors</h1>
-      {names}
+      {miniPalettes}
     </div>
   );
 };
